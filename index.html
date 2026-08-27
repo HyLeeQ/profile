@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile – Mobile Developer</title>
+  <meta name="description" content="Trang cá nhân của một Mobile Developer đam mê xây dựng ứng dụng Android & iOS. Khám phá kỹ năng, dự án và thông tin liên hệ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-canvas" id="bgCanvas"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Dev<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">Giới thiệu</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Kỹ năng</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Dự án</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Liên hệ</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for hire
+      </div>
+      <h1 class="hero-name">
+        Xin chào, tôi là<br/>
+        <span class="gradient-text">Nguyễn Văn A</span>
+      </h1>
+      <p class="hero-role">
+        <span class="role-prefix">_</span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor">|</span>
+      </p>
+      <p class="hero-desc">
+        Đam mê xây dựng những ứng dụng di động mượt mà, tối ưu hiệu suất và mang lại trải nghiệm người dùng xuất sắc trên cả Android lẫn iOS.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" id="heroViewProjects">
+          <span>Xem dự án</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost" id="heroContact">Liên hệ tôi</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Năm kinh nghiệm</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Dự án hoàn thành</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">10k+</span>
+          <span class="stat-label">Lượt tải ứng dụng</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-ring ring-3"></div>
+        <div class="avatar-glow"></div>
+        <img src="avatar.jpg" alt="Profile Avatar" class="avatar-img" id="heroAvatar" />
+        <div class="avatar-badge-fl">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
+        </div>
+        <div class="avatar-badge-and">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" />
+        </div>
+        <div class="avatar-badge-kt">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
+        </div>
+      </div>
+      <!-- Floating code card -->
+      <div class="code-card">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <pre class="code-snippet"><span class="c-purple">fun</span> <span class="c-cyan">buildApp</span>() {
+  <span class="c-purple">val</span> dev = Developer(
+    name = <span class="c-green">"Nguyễn Văn A"</span>,
+    platform = <span class="c-green">"Android & iOS"</span>
+  )
+  <span class="c-purple">return</span> dev.<span class="c-cyan">launch()</span>
+}</pre>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01. about</span>
+        <h2 class="section-title">Giới thiệu <span class="gradient-text">bản thân</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Tôi là một <strong>Mobile Developer</strong> với hơn 3 năm kinh nghiệm phát triển ứng dụng di động trên nền tảng <strong>Android</strong> và <strong>iOS</strong>. Tôi chuyên sử dụng <strong>Flutter</strong>, <strong>Kotlin</strong> và <strong>Swift</strong> để tạo ra những sản phẩm chất lượng cao.</p>
+          <p>Tôi đặc biệt quan tâm đến trải nghiệm người dùng, hiệu suất ứng dụng và kiến trúc code sạch. Luôn cập nhật xu hướng công nghệ mới nhất và áp dụng vào dự án thực tế.</p>
+          <p>Ngoài công việc, tôi thích đóng góp vào các dự án open-source và chia sẻ kiến thức với cộng đồng developer Việt Nam.</p>
+          <div class="about-tags">
+            <span class="tag">Clean Architecture</span>
+            <span class="tag">TDD</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Agile/Scrum</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="info-card glass-card">
+            <div class="info-icon">🎓</div>
+            <div>
+              <h4>Học vấn</h4>
+              <p>Kỹ sư Công nghệ Thông tin<br/><span>Đại học Bách Khoa TP.HCM</span></p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Địa điểm</h4>
+              <p>TP. Hồ Chí Minh, Việt Nam<br/><span>Sẵn sàng làm việc remote</span></p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">🏆</div>
+            <div>
+              <h4>Chứng chỉ</h4>
+              <p>Google Associate Android Dev<br/><span>Flutter Certified Developer</span></p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">💼</div>
+            <div>
+              <h4>Kinh nghiệm</h4>
+              <p>Senior Mobile Developer<br/><span>TechCorp Vietnam (2022 – nay)</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02. skills</span>
+        <h2 class="section-title">Kỹ năng &amp; <span class="gradient-text">Công nghệ</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">📱</span> Mobile Development
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="skill-icon"/>
+                <span>Flutter / Dart</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:92%"></div></div>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="skill-icon"/>
+                <span>Kotlin (Android)</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:88%"></div></div>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" class="skill-icon"/>
+                <span>Swift (iOS)</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:75%"></div></div>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" class="skill-icon"/>
+                <span>React Native</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:70%"></div></div>
+              <span class="skill-pct">70%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">⚙️</span> Backend & Databases
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="skill-icon"/>
+                <span>Firebase</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:90%"></div></div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-icon"/>
+                <span>Node.js / REST API</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:72%"></div></div>
+              <span class="skill-pct">72%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-icon"/>
+                <span>PostgreSQL / SQLite</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:68%"></div></div>
+              <span class="skill-pct">68%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" class="skill-icon"/>
+                <span>GraphQL</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:60%"></div></div>
+              <span class="skill-pct">60%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🛠️</span> Tools & DevOps
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon"/>
+                <span>Git / GitHub</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:95%"></div></div>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-icon"/>
+                <span>Docker / CI/CD</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon"/>
+                <span>Figma / UI Design</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:78%"></div></div>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" class="skill-icon"/>
+                <span>Jira / Agile</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:85%"></div></div>
+              <span class="skill-pct">85%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03. projects</span>
+        <h2 class="section-title">Dự án <span class="gradient-text">nổi bật</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card glass-card" id="projectCard1">
+          <div class="project-header">
+            <div class="project-icon" style="background: linear-gradient(135deg, #7c3aed, #4f46e5)">📦</div>
+            <div class="project-links">
+              <a href="#" class="icon-btn" aria-label="GitHub" id="proj1Github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-btn" aria-label="Live demo" id="proj1Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">ShopEasy – E-Commerce App</h3>
+          <p class="project-desc">Ứng dụng mua sắm cross-platform xây dựng bằng Flutter. Tích hợp thanh toán VNPay, Momo, push notification và real-time chat. Đạt 4.8⭐ trên cả App Store & Google Play.</p>
+          <div class="project-tech">
+            <span class="tech-chip">Flutter</span>
+            <span class="tech-chip">Firebase</span>
+            <span class="tech-chip">Riverpod</span>
+            <span class="tech-chip">REST API</span>
+          </div>
+          <div class="project-metrics">
+            <span>📥 5k+ lượt tải</span>
+            <span>⭐ 4.8 rating</span>
+          </div>
+        </article>
+
+        <article class="project-card glass-card featured" id="projectCard2">
+          <div class="featured-badge">✨ Featured</div>
+          <div class="project-header">
+            <div class="project-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2)">🏥</div>
+            <div class="project-links">
+              <a href="#" class="icon-btn" aria-label="GitHub" id="proj2Github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-btn" aria-label="Live demo" id="proj2Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">HealthTrack – Theo dõi sức khỏe</h3>
+          <p class="project-desc">Ứng dụng iOS native (Swift/SwiftUI) kết nối Apple Health & HealthKit. AI phân tích sức khỏe cá nhân, nhắc nhở uống thuốc, tư vấn dinh dưỡng thông minh. Được Apple Review lựa chọn đặc biệt.</p>
+          <div class="project-tech">
+            <span class="tech-chip">Swift</span>
+            <span class="tech-chip">SwiftUI</span>
+            <span class="tech-chip">HealthKit</span>
+            <span class="tech-chip">CoreML</span>
+          </div>
+          <div class="project-metrics">
+            <span>📥 3k+ lượt tải</span>
+            <span>🍎 Apple Featured</span>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" id="projectCard3">
+          <div class="project-header">
+            <div class="project-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706)">🎓</div>
+            <div class="project-links">
+              <a href="#" class="icon-btn" aria-label="GitHub" id="proj3Github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="icon-btn" aria-label="Live demo" id="proj3Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">EduViet – Nền tảng học trực tuyến</h3>
+          <p class="project-desc">App Android (Kotlin + Jetpack Compose) cung cấp nền tảng học online cho học sinh Việt Nam. Video streaming HLS, bài kiểm tra tương tác, chứng chỉ blockchain và hệ thống gamification.</p>
+          <div class="project-tech">
+            <span class="tech-chip">Kotlin</span>
+            <span class="tech-chip">Jetpack Compose</span>
+            <span class="tech-chip">ExoPlayer</span>
+            <span class="tech-chip">Room DB</span>
+          </div>
+          <div class="project-metrics">
+            <span>📥 2k+ lượt tải</span>
+            <span>👨‍🎓 500+ học viên</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04. contact</span>
+        <h2 class="section-title">Hãy <span class="gradient-text">kết nối</span> với tôi</h2>
+        <p class="section-sub">Tôi luôn sẵn sàng thảo luận về các dự án thú vị hay cơ hội hợp tác mới.</p>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <a href="mailto:nguyenvana@email.com" class="contact-item glass-card" id="contactEmail">
+            <div class="contact-icon email-icon">✉️</div>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-val">nguyenvana@email.com</span>
+            </div>
+          </a>
+          <a href="tel:+84901234567" class="contact-item glass-card" id="contactPhone">
+            <div class="contact-icon phone-icon">📞</div>
+            <div>
+              <span class="contact-label">Điện thoại</span>
+              <span class="contact-val">+84 90 123 4567</span>
+            </div>
+          </a>
+          <div class="contact-item glass-card">
+            <div class="contact-icon loc-icon">📍</div>
+            <div>
+              <span class="contact-label">Địa điểm</span>
+              <span class="contact-val">TP. Hồ Chí Minh, Việt Nam</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn" id="socialGithub" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="socialLinkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="socialTwitter" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="socialYoutube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" id="contactForm" onsubmit="handleSubmit(event)">
+          <h3>Gửi tin nhắn</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Tên của bạn</label>
+              <input type="text" id="contactName" placeholder="Nguyễn Văn B" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmailField">Email</label>
+              <input type="email" id="contactEmailField" placeholder="example@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Chủ đề</label>
+            <input type="text" id="contactSubject" placeholder="Hợp tác dự án / Tư vấn kỹ thuật..." />
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Nội dung</label>
+            <textarea id="contactMsg" rows="5" placeholder="Xin chào, tôi muốn trao đổi về..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full" id="submitBtn">
+            <span id="submitText">Gửi tin nhắn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span>✅</span> Tin nhắn đã được gửi! Tôi sẽ phản hồi sớm nhất.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2026 Nguyễn Văn A. Made with <span class="heart">❤️</span> in Vietnam.</p>
+        <p class="footer-tech">Built with <span class="mono">HTML</span> · <span class="mono">CSS</span> · <span class="mono">JS</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
